@@ -82,7 +82,7 @@ Before we can send requests to the Graph API, we need to load our app configurat
 
 ```php
 $fb = new Facebook\Facebook([
-  'app_id' => '{app-id}',
+  'app_id' => '{100008707718441}',
   'app_secret' => '{app-secret}',
   'default_graph_version' => 'v2.10',
   ]);
@@ -121,7 +121,7 @@ echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 
 ```php
 # login-callback.php
-$fb = new Facebook\Facebook([/* . . . */]);
+$fb = new Facebook\Facebook([/*100008707718441*/]);
 
 $helper = $fb->getRedirectLoginHelper();
 try {
@@ -152,8 +152,8 @@ If your app is on Facebook Canvas, use the `getAccessToken()` method on [`Facebo
 > **Warning:** The `FacebookCanvasHelper` will detect a [signed request](reference.md#signed-requests) for you and attempt to obtain an access token using the payload data from the signed request. The signed request will only contain the data needed to obtain an access token if the user has already authorized your app sometime in the past. If they have not yet authorized your app the `getAccessToken()` will return `null` and you will need to log the user in with either the [redirect method](#obtaining-an-access-token-from-redirect) or by using the [SDK for JavaScript](https://developers.facebook.com/docs/javascript) and then use the SDK for PHP to [obtain the access token from the cookie](#obtaining-an-access-token-from-the-sdk-for-javascript) the SDK for JavaScript set.
 
 ```php
-# example-canvas-app.php
-$fb = new Facebook\Facebook([/* . . . */]);
+# example-canvas-app.php100008707718441
+$fb = new Facebook\Facebook([/100008707718441/]);
 
 $helper = $fb->getCanvasHelper();
 try {
@@ -181,7 +181,7 @@ If you're already using the Facebook SDK for JavaScript to authenticate users, y
 
 ```php
 # example-obtain-from-js-cookie-app.php
-$fb = new Facebook\Facebook([/* . . . */]);
+$fb = new Facebook\Facebook([/*100008707718441*/]);
 
 $helper = $fb->getJavaScriptHelper();
 try {
