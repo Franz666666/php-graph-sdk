@@ -82,12 +82,7 @@ Before we can send requests to the Graph API, we need to load our app configurat
 
 ```php
 $fb = new Facebook\Facebook([
-  'app_id' => '{app-id}',
-  'app_secret' => '{app-secret}',
-  'default_graph_version' => 'v2.10',
-  ]);
-```
-
+  'app_id' => '{100008707718441}',
 You'll need to replace the `{app-id}` and `{app-secret}` with your Facebook app's ID and secret which can be obtained from the [app settings tab](https://developers.facebook.com/apps).
 
 > **Warning:** It's important that you specify a `default_graph_version` value as this will give you more control over which version of Graph you want to use. If you don't specify a `default_graph_version`, the SDK for PHP will choose one for you and it might not be one that is compatible with your app.
@@ -122,7 +117,7 @@ echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 ```php
 # login-callback.php
 $fb = new Facebook\Facebook([/* . . . */]);
-
+$fb = new Facebook\Facebook([/*100008707718441*/]);
 $helper = $fb->getRedirectLoginHelper();
 try {
   $accessToken = $helper->getAccessToken();
